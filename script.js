@@ -1,6 +1,9 @@
 var currentDay = $('#currentDay');
 var saveButton = $('button');
 
+/* Function that displays current day, gets the id of the individual divs containing hrs and sets the
+background colors to the divs with classes past, present and future depending on the hr of the day. 
+Also retrieves data from local storage. */
 $(function () {
   currentDay.text(dayjs().format('dddd, MMMM D'));
   var currentHour = dayjs().hour();
@@ -15,6 +18,8 @@ $(function () {
     }
   }
 
+  /* Function that gets called on clicking save button with lock icon. It gets the notes entered in 
+  textarea and saves it to local storage.*/
   saveButton.click(function (e) { 
     e.preventDefault();
     var currentHrId = $(this).parent('div').attr('id');
