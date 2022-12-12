@@ -5,7 +5,8 @@ var currentDay = $('#currentDay');
 var saveButton = $('button');
 
 $(function () {
-  
+  currentDay.text(dayjs().format('dddd, MMMM D'));
+  // var currentHour = dayjs().hour();
 
 });
 
