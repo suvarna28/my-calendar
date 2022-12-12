@@ -6,8 +6,16 @@ var saveButton = $('button');
 
 $(function () {
   currentDay.text(dayjs().format('dddd, MMMM D'));
-  // var currentHour = dayjs().hour();
-
+  var currentHour = dayjs().hour();
+  for (var i = 9; i < 18; i++){
+    if(i < currentHour){
+      $('#hour-'+i).addClass('past');
+    } else if (i == currentHour){
+      $('#hour-'+i).addClass('present');
+    } else {
+      $('#hour-'+i).addClass('future');
+    }
+  }
 });
 
   // TODO: Add a listener for click events on the save button. This code should
